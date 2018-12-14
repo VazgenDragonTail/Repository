@@ -1,4 +1,4 @@
-class Wolf extends LivingCreature{
+module.exports = class Wolf extends LivingCreature{
     constructor(x, y) {
         this.x = x;
         this.y = y;
@@ -46,7 +46,9 @@ class Wolf extends LivingCreature{
     }
 
     mult() {
-        var empty = random(this.chooseCell(0))
+        var empty = Array.prototype.randomElement = function () {
+            return this[Math.floor(Math.random() * this.length)]
+        }(this.chooseCell(0))
         if (empty && this.energy > 15) {
             var newX = empty[0]
             var newY = empty[1]
@@ -57,7 +59,9 @@ class Wolf extends LivingCreature{
     }
 
     move(){
-        var empty = random(this.chooseCell(0))
+        var empty = Array.prototype.randomElement = function () {
+            return this[Math.floor(Math.random() * this.length)]
+        }(this.chooseCell(0))
         this.energy--;
         if (empty){
             var newX = empty[0]

@@ -1,4 +1,4 @@
-class Pterodaktel extends LivingCreature{
+module.exports = class Pterodaktel extends LivingCreature{
     constructor(x, y) {
         this.x = x;
         this.y = y;
@@ -64,7 +64,9 @@ class Pterodaktel extends LivingCreature{
     }
 
     mult() {
-        var empty = random(this.chooseCell(0))
+        var empty = Array.prototype.randomElement = function () {
+            return this[Math.floor(Math.random() * this.length)]
+        }(this.chooseCell(0))
         if (empty && this.energy > 30) {
             var newX = empty[0]
             var newY = empty[1]
@@ -75,7 +77,9 @@ class Pterodaktel extends LivingCreature{
     }
 
     move(){
-        var empty = random(this.chooseCell(0))
+        var empty = Array.prototype.randomElement = function () {
+            return this[Math.floor(Math.random() * this.length)]
+        }(this.chooseCell(0))
         this.energy--;
         if (empty){
             var newX = empty[0]
@@ -89,7 +93,9 @@ class Pterodaktel extends LivingCreature{
     }
 
     eat(){
-        var hambal = random(this.chooseCell(4))
+        var hambal = Array.prototype.randomElement = function () {
+            return this[Math.floor(Math.random() * this.length)]
+        }(this.chooseCell(4))
         if(hambal){
             var newX = hambal[0]
             var newY = hambal[1]
@@ -108,7 +114,9 @@ class Pterodaktel extends LivingCreature{
         }
     }
     eat2(){
-         var xot = random(this.chooseCell(1))
+         var xot = Array.prototype.randomElement = function () {
+            return this[Math.floor(Math.random() * this.length)]
+        }(this.chooseCell(1))
          if(xot){
             var newX = xot[0]
             var newY = xot[1]
@@ -127,7 +135,9 @@ class Pterodaktel extends LivingCreature{
         }
     }
     eat3(){
-         var wolf = random(this.chooseCell(3))
+         var wolf = Array.prototype.randomElement = function () {
+            return this[Math.floor(Math.random() * this.length)]
+        }(this.chooseCell(3))
          if(wolf){
             var newX = wolf[0]
             var newY = wolf[1]

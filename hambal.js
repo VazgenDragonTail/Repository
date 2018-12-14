@@ -1,4 +1,4 @@
-class Hambal extends LivingCreature{
+module.exports = class Hambal extends LivingCreature{
     constructor(x, y) {
         this.x = x;
         this.y = y;
@@ -46,7 +46,9 @@ class Hambal extends LivingCreature{
     }
 
     mult() {
-        var empty = random(this.chooseCell(0))
+        var empty = Array.prototype.randomElement = function () {
+            return this[Math.floor(Math.random() * this.length)]
+        }(this.chooseCell(0))
         if (empty && this.energy > 10) {
             var newX = empty[0]
             var newY = empty[1]
@@ -57,7 +59,9 @@ class Hambal extends LivingCreature{
     }
 
     move(){
-        var empty = random(this.chooseCell(0))
+        var empty = Array.prototype.randomElement = function () {
+            return this[Math.floor(Math.random() * this.length)]
+        }(this.chooseCell(0))
         this.energy--;
         if (empty){
             var newX = empty[0]
@@ -71,7 +75,9 @@ class Hambal extends LivingCreature{
     }
 
     eat(){
-        var wolf = random(this.chooseCell(3))
+        var wolf = Array.prototype.randomElement = function () {
+            return this[Math.floor(Math.random() * this.length)]
+        }(this.chooseCell(3))
         if(wolf){
             var newX = wolf[0]
             var newY = wolf[1]
@@ -90,7 +96,9 @@ class Hambal extends LivingCreature{
         }
     }
         eat2(){
-            var cow = random(this.chooseCell(2))
+            var cow = Array.prototype.randomElement = function () {
+                return this[Math.floor(Math.random() * this.length)]
+            }(this.chooseCell(2))
         if(cow){
             var newX = cow[0]
             var newY = cow[1]
