@@ -46,9 +46,8 @@ module.exports = class Wolf extends LivingCreature{
     }
 
     mult() {
-        var empty = Array.prototype.randomElement = function () {
-            return this[Math.floor(Math.random() * this.length)]
-        }(this.chooseCell(0))
+        let arr = this.chooseCell0(0);
+        var empty = arr[Math.round(Math.random()* arr.length)]
         if (empty && this.energy > 15) {
             var newX = empty[0]
             var newY = empty[1]
@@ -59,9 +58,8 @@ module.exports = class Wolf extends LivingCreature{
     }
 
     move(){
-        var empty = Array.prototype.randomElement = function () {
-            return this[Math.floor(Math.random() * this.length)]
-        }(this.chooseCell(0))
+        let arr = this.chooseCell0(0);
+        var empty = arr[Math.round(Math.random()* arr.length)]
         this.energy--;
         if (empty){
             var newX = empty[0]
@@ -75,7 +73,8 @@ module.exports = class Wolf extends LivingCreature{
     }
 
     eat(){
-        var cow = random(this.chooseCell(2))
+        let arr = this.chooseCell0(2);
+        var cow = arr[Math.round(Math.random()* arr.length)]
         if (cow){
             var newX = cow[0]
             var newY = cow[1]

@@ -46,9 +46,8 @@ module.exports = class Xotaker extends LivingCreature{
     }
 
     mult() {
-        var empty = Array.prototype.randomElement = function () {
-            return this[Math.floor(Math.random() * this.length)]
-        }(this.chooseCell(0))
+        let arr = this.chooseCell0(0);
+        var empty = arr[Math.round(Math.random()* arr.length)]
         if (empty && this.energy > 10) {
             var newX = empty[0]
             var newY = empty[1]
@@ -59,9 +58,8 @@ module.exports = class Xotaker extends LivingCreature{
     }
 
     move(){
-        var empty = Array.prototype.randomElement = function () {
-            return this[Math.floor(Math.random() * this.length)]
-        }(this.chooseCell(0))
+        let arr = this.chooseCell0(0);
+        var empty = arr[Math.round(Math.random()* arr.length)]
         this.energy--;
         if (empty){
             var newX = empty[0]
@@ -75,9 +73,8 @@ module.exports = class Xotaker extends LivingCreature{
     }
 
     eat(){
-        var food = Array.prototype.randomElement = function () {
-            return this[Math.floor(Math.random() * this.length)]
-        }(this.chooseCell(1))
+        let arr = this.chooseCell0(1);
+        var food = arr[Math.round(Math.random()* arr.length)]
         if (food){
             var newX = food[0]
             var newY = food[1]
