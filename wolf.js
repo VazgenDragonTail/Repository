@@ -1,18 +1,10 @@
+var LivingCreature = require("./LivingCreature");
+
 module.exports = class Wolf extends LivingCreature{
-    constructor(x, y) {
-        this.x = x;
-        this.y = y;
+    constructor(x, y, index) {
+        super(x, y, index);
         this.energy = 5;
-        this.directions = [
-            [this.x - 1, this.y - 1],
-            [this.x, this.y - 1],
-            [this.x + 1, this.y - 1],
-            [this.x - 1, this.y],
-            [this.x + 1, this.y],
-            [this.x - 1, this.y + 1],
-            [this.x, this.y + 1],
-            [this.x + 1, this.y + 1]
-        ]
+        
     }
 
     getNewDirections(){
@@ -54,6 +46,8 @@ module.exports = class Wolf extends LivingCreature{
             matrix[newY][newX] = 3
             var wf = new Wolf(newX, newY)
             wolfArr.push(wf)
+            var gishatich = wolf;
+            console.log(gishatich);
         }
     }
 

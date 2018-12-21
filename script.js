@@ -2,6 +2,24 @@ var side = 20;
 var socket =io();
 var m = 20;
 var n = 20;
+var xot = grass;
+var xotiutox = xotaker;
+var gishatich = wolf;
+var hambal1 = hambal;
+var pter = pterodaktel;
+var x1 = document.getElementById("grassCount");
+var x2 = document.getElementById("xotakerCount");
+var x3 = document.getElementById("wolfCount");
+var x4 = document.getElementById("hambalCount");
+var x5 = document.getElementById("pterodaktelCount");
+
+x1.innerHTML += xot;
+x2.innerHTML += xotiutox;
+x3.innerHTMl += gishatich;
+x4.innerHTML += hambal1;
+x5.innerHTML += pter;
+
+console.log(xot, xotiutox, gishatich, hambal1, pter);
 
 function setup() {
     frameRate(5);
@@ -9,10 +27,7 @@ function setup() {
     createCanvas(m * side, n * side);
     background('#33FFFF');
 }
-
-setInterval(drawServerayin, 1000);
-
-function drawServerayin() {
+function drawServerayin(w, h){
     for (var y = 0; y < matrix.length; y++) {
         for (var x = 0; x < matrix[y].length; x++) {
             if (matrix[y][x] == 1) {
@@ -33,6 +48,10 @@ function drawServerayin() {
             else if (matrix[y][x] == 5) {
                 fill("#6C8EAD");
             }
+            else if(matri[y][x] == 6){
+                fill("cyan");
+                
+            }
 
             rect(x * side, y * side, side, side)
 
@@ -40,40 +59,10 @@ function drawServerayin() {
                 text(x + " " + y, x * side + side / 2, y * side + side / 2)
             */
         }
-    }
-
-    for (var i in grassArr) {
-        grassArr[i].mult()
-    }
-
-    for (var i in xotakerArr) {
-        xotakerArr[i].move()
-        xotakerArr[i].eat()
-        xotakerArr[i].mult()
-        xotakerArr[i].die()
-    }
-    for (var i in wolfArr) {
-        wolfArr[i].move()
-        wolfArr[i].eat()
-        wolfArr[i].mult()
-        wolfArr[i].die()
-    }
-    for (var i in hambalArr) {
-        hambalArr[i].move()
-        hambalArr[i].eat()
-        hambalArr[i].eat2()
-        hambalArr[i].mult()
-        hambalArr[i].die()
-    }
-    for (var i in pterodaktelArr) {
-        pterodaktelArr[i].move()
-        pterodaktelArr[i].eat()
-        pterodaktelArr[i].eat2()
-        pterodaktelArr[i].eat3()
-        pterodaktelArr[i].mult()
-        pterodaktelArr[i].die()
-    }
+    }   
 }
-socket.on("matrix", drawServerayin);
+   
+
+
 
 

@@ -1,18 +1,10 @@
+var LivingCreature = require("./LivingCreature");
+
 module.exports = class Pterodaktel extends LivingCreature{
-    constructor(x, y) {
-        this.x = x;
-        this.y = y;
+    constructor(x, y, index) {
+        super(x, y, index);
         this.energy = 25;
-        this.directions = [
-            [this.x - 1, this.y - 1],
-            [this.x, this.y - 1],
-            [this.x + 1, this.y - 1],
-            [this.x - 1, this.y],
-            [this.x + 1, this.y],
-            [this.x - 1, this.y + 1],
-            [this.x, this.y + 1],
-            [this.x + 1, this.y + 1]
-        ]
+        
     }
 
     getNewDirections(){
@@ -73,6 +65,8 @@ module.exports = class Pterodaktel extends LivingCreature{
             matrix[newY][newX] = 5
             var pt = new Pterodaktel(newX, newY)
             pterodaktelArr.push(pt)
+            var pter = pterodaktel;
+            console.log(pter);
         }
     }
 

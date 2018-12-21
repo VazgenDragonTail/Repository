@@ -1,4 +1,4 @@
-var livingCreature = require("./LivingCreature");
+var LivingCreature = require("./LivingCreature");
 
 module.exports = class Grass extends LivingCreature {
     
@@ -13,6 +13,8 @@ module.exports = class Grass extends LivingCreature {
             matrix[newY][newX] = 1
             var newGr = new Grass(newX, newY)
             grassArr.push(newGr)
+            var xot = grass + 1;
+            console.log(xot);
         }
     }
 }
